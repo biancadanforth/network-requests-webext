@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name": "Network Requests WebExtension",
+  "version": "1.0",
+
+  "description": "A WebExtension that logs network requests",
+  "homepage_url": "https://github.com/biancadanforth/network-requests-webext.git",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.mozilla.org/*"],
+      "js": ["network-requests-webext.js"]
+    }
+  ]
+
+}
