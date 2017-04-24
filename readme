@@ -1,0 +1,15 @@
+README
+
+1. Navigate to project directory
+
+cd network-requests-webext
+
+2. Run the web extension
+
+(Note: If you don't already have the web-ext tool installed, enter 'npm install --global web-ext' first)
+
+web-ext run
+
+3. Click on the browserAction icon in the toolbar
+
+4. Check the console to see the URL for each open tab logged.

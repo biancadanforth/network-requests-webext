@@ -4,18 +4,25 @@
   "name": "Network Requests WebExtension",
   "version": "1.0",
 
-  "description": "A WebExtension that logs network requests",
+  "description": "A Firefox web extension that logs network requests",
   "homepage_url": "https://github.com/biancadanforth/network-requests-webext.git",
 
   "icons": {
     "48": "icons/border-48.png"
   },
 
-  "content_scripts": [
-    {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["network-requests-webext.js"]
-    }
-  ]
+  "permissions": [
+  	"webRequest",
+    "storage",
+    "tabs"
+  ],
 
+  "browser_action": {
+    "default_icon": "icons/border-48.png",
+    "default_title": "Log Network Requests"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  }
 }
