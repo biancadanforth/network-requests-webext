@@ -13,6 +13,7 @@
 
   "permissions": [
   	"webRequest",
+  	"<all_urls>",
     "storage",
     "tabs"
   ],

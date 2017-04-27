@@ -1,33 +1,14 @@
 function logRequests(evt) {
 
-	// print each tab URL to the console
-	function logTabs(tabs) {
-		for (let tab of tabs) {
-			console.log(tab.url);
-			//saveUrl(tab);
-		}
+	function logURL(details) {
+	  console.log(details);
 	}
 
-	function onError(error) {
-  	console.log('Error');
-	}
-
-	// get all tabs, then print each to the console
-	var querying = browser.tabs.query({});
-	querying.then(logTabs, onError);
-
-	// function saveUrl(tab) {
-	// 	browser.storage.local.set({
-	// 		[tab]: tab.url 
-	// 	});	
-	// }
-
-	// function getUrl(tab) {
-	// 	var gettingRequest = browser.storage.local.get(tab);
-	// 	gettingItem.then((returnObj) => {
-	// 		console.log(returnObj.url);
-	// 	});
-	// }
+	browser.webRequest.onResponseStarted.addListener(
+		logURL,
+		{urls: ["<all_urls>"]},
+		["responseHeaders"]
+		);
 
 	//stop event propagation after initial click
 	evt.preventDefault();
