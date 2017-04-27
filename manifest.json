@@ -14,13 +14,12 @@
   "permissions": [
   	"webRequest",
   	"<all_urls>",
-    "storage",
-    "tabs"
+    "storage"
   ],
 
   "browser_action": {
     "default_icon": "icons/border-48.png",
-    "default_title": "Log Network Requests"
+    "default_title": "Network Requests WebExtension"
   },
 
   "background": {
